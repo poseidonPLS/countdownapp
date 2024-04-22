@@ -3,32 +3,62 @@ body {
 }
 
 .countdown-container {
-  background-color: #000;
-  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
   text-align: center;
+  max-width: 400px; /* added max-width for mobile */
+  margin: 0 auto; /* added margin for mobile */
 }
 
 .countdown-header {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #b879ff;
 }
 
 .countdown-clock {
   display: flex;
-  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap; /* added flex-wrap for mobile */
+}
+
+.clock-row {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin: 0 20px;
+  width: 50%; /* added width for mobile */
 }
 
 .clock-digit {
   font-size: 48px;
   font-weight: bold;
-  margin: 0 10px;
+  margin-bottom: 10px;
+  color: #d4afff;
 }
 
 .clock-label {
   font-size: 18px;
-  margin: 0 10px;
+  color: #8b62ba;
+}
+
+/* added media query for mobile */
+@media (max-width: 768px) {
+  .countdown-container {
+    padding: 10px;
+  }
+  .clock-row {
+    width: 100%; /* changed width for mobile */
+  }
+  .clock-digit {
+    font-size: 36px; /* changed font size for mobile */
+  }
+  .clock-label {
+    font-size: 14px; /* changed font size for mobile */
+  }
 }

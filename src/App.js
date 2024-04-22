@@ -41,14 +41,22 @@ function Countdown() {
     <div className="countdown-container">
       <h1 className="countdown-header">PulseChain {year}st Year Anniversary</h1>
       <div className="countdown-clock">
-        <span className="clock-digit">{days}</span>
-        <span className="clock-label">Days</span>
-        <span className="clock-digit">{hours}</span>
-        <span className="clock-label">Hours</span>
-        <span className="clock-digit">{minutes}</span>
-        <span className="clock-label">Mins</span>
-        <span className="clock-digit">{seconds}</span>
-        <span className="clock-label">Seconds</span>
+        <div className="clock-row">
+          <span className="clock-digit">{days}</span>
+          <span className="clock-label">Days</span>
+        </div>
+        <div className="clock-row">
+          <span className="clock-digit">{hours}</span>
+          <span className="clock-label">Hours</span>
+        </div>
+        <div className="clock-row">
+          <span className="clock-digit">{minutes}</span>
+          <span className="clock-label">Mins</span>
+        </div>
+        <div className="clock-row">
+          <span className="clock-digit">{seconds}</span>
+          <span className="clock-label">Seconds</span>
+        </div>
       </div>
     </div>
   );
