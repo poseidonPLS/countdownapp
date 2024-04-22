@@ -9,7 +9,7 @@ function Countdown() {
   const [seconds, setSeconds] = useState(0);
 
   const targetDate = useMemo(() => {
-    return new Date("May 13, 2024");
+    return new Date(Date.UTC(2024, 4, 13, 0, 0, 0));
   }, []); // Empty dependency array
 
   useEffect(() => {
