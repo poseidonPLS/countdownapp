@@ -39,7 +39,7 @@ function Countdown() {
 
   return (
     <div className="countdown-container">
-      <h1 className="countdown-header">PulseChain {year}st Year Anniversary</h1>
+      <h1 className="countdown-header">PulseChain {year}nd Year Anniversary</h1>
       <div className="countdown-clock">
         <div className="clock-row">
           <span className="clock-digit">{days}</span>
