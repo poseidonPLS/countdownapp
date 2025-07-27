@@ -1,0 +1,15 @@
+{
+  "startingData": {
+    "block": 24080721,
+    "transactions": 301259930
+  },
+  "forkData": {
+    "block": 17233000,
+    "transactions": null
+  },
+  "lastUpdate": null,
+  "currentData": {
+    "block": 24080721,
+    "transactions": 301259930
+  }
+}

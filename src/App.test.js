@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders PulseChain Anniversary countdown', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const headerElement = screen.getByText(/PulseChain Anniversary/i);
+  expect(headerElement).toBeInTheDocument();
+});
+
+test('renders PulseChain Milestones section', () => {
+  render(<App />);
+  const milestonesHeader = screen.getByText(/PulseChain Milestones/i);
+  expect(milestonesHeader).toBeInTheDocument();
 });
