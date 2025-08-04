@@ -5,6 +5,7 @@ import PulseChainMilestones from "./PulseChainMilestones";
 function Countdown() {
   const [timeLeft, setTimeLeft] = useState({});
   const [celebrationMode, setCelebrationMode] = useState(false);
+  const [daysSinceLaunch, setDaysSinceLaunch] = useState(0);
   const [targetDate, setTargetDate] = useState(() => {
     const today = new Date();
     let anniversary = new Date(today.getFullYear(), 4, 13, 0, 0, 0); // May 13
@@ -34,6 +35,11 @@ function Countdown() {
     const calculateTimeLeft = () => {
       const currentDate = new Date();
       let target = new Date(targetDate);
+      
+      // Calculate days since PulseChain launch (May 13, 2023)
+      const launchDate = new Date(2023, 4, 13, 0, 0, 0);
+      const daysSince = Math.floor((currentDate - launchDate) / (1000 * 60 * 60 * 24));
+      setDaysSinceLaunch(daysSince);
       
       // If May 13 has passed this year, use next year
       if (currentDate > target) {
@@ -82,6 +88,12 @@ function Countdown() {
       <h1 className="countdown-header">
         {getCountdownMessage()}
       </h1>
+      <div className="days-since-launch">
+        <div className="launch-counter">
+          <span className="launch-digit">{daysSinceLaunch}</span>
+          <span className="launch-label">Days Since PulseChain Launch</span>
+        </div>
+      </div>
       <div className="countdown-clock">
         <div className="clock-row">
           <span className={`clock-digit ${celebrationMode ? 'celebration-digit' : ''}`}>

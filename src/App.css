@@ -375,6 +375,73 @@ body {
 }
 
 /* Magical glow effects */
+.days-since-launch {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.launch-counter {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  background: 
+    linear-gradient(135deg, rgba(138, 43, 226, 0.15), rgba(79, 172, 254, 0.15)),
+    rgba(26, 26, 46, 0.9);
+  border: 1px solid rgba(138, 43, 226, 0.4);
+  border-radius: 25px;
+  padding: 1.5rem 2.5rem;
+  backdrop-filter: blur(15px);
+  box-shadow: 
+    0 8px 32px rgba(138, 43, 226, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.launch-counter:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 
+    0 15px 40px rgba(138, 43, 226, 0.4),
+    0 0 60px rgba(79, 172, 254, 0.3);
+  border-color: rgba(79, 172, 254, 0.6);
+}
+
+.launch-digit {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(45deg, #00f2fe, #4facfe, #7873f5, #ff6ec4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Orbitron', monospace;
+  line-height: 1;
+  filter: drop-shadow(0 0 15px rgba(79, 172, 254, 0.6));
+  animation: launchGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes launchGlow {
+  0% { 
+    filter: drop-shadow(0 0 15px rgba(79, 172, 254, 0.6));
+  }
+  100% { 
+    filter: drop-shadow(0 0 25px rgba(255, 110, 196, 0.8));
+  }
+}
+
+.launch-label {
+  color: #e0e0ff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 0.75rem;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.launch-counter:hover .launch-label {
+  opacity: 1;
+  text-shadow: 0 0 10px rgba(79, 172, 254, 0.8);
+}
+
 .magical-glow {
   box-shadow: 
     0 0 20px rgba(138, 43, 226, 0.3),
@@ -386,4 +453,34 @@ body {
 @keyframes magicalGlow {
   0% { box-shadow: 0 0 20px rgba(138, 43, 226, 0.3); }
   100% { box-shadow: 0 0 30px rgba(255, 110, 196, 0.5); }
+}
+
+@media (max-width: 768px) {
+  .launch-counter {
+    padding: 1rem 1.5rem;
+    margin: 0 1rem;
+  }
+  
+  .launch-digit {
+    font-size: 2rem;
+  }
+  
+  .launch-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .launch-counter {
+    padding: 0.75rem 1.25rem;
+  }
+  
+  .launch-digit {
+    font-size: 1.75rem;
+  }
+  
+  .launch-label {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
 }
